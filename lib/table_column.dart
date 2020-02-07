@@ -116,11 +116,11 @@ class TableColumn extends StatelessWidget {
     );
   }
 
-  String getFormattedValue(dynamic value) {
+  dynamic getFormattedValue(dynamic value) {
     if (value == null) return column?.defaultValue ?? '';
     if (column?.valueBuilder != null) {
       return column.valueBuilder(value);
     }
-    return value.toString();
+    return value;
   }
 }
